@@ -1,0 +1,53 @@
+http://alisasapp.com/beers
+14.156.178.2/beers
+http://alisasapp.com/beer.jpg
+
+client makes browser request
+  two separate requests
+  DNS remembers the name and converts it to an IP address
+
+if its static
+digital ocean  
+  apache, passenger
+  nginx, passenger is serving the dynamic content and interfacing with rails
+
+  nginx -> unicorn, thin, webrick
+
+  unicorn master
+
+  unicorn workers, unicorn workers, unicorn workers
+
+  server you made the request to makes the response
+---
+never hits rails app
+
+rack
+middleware
+
+rails IS a rack app
+routes
+get "/beers" => "beers#index"
+if its dynamic
+controller and action
+def index
+  @beers = Beer.all
+end
+through the model retrieves data
+renders a view
+render :index
+
+
+@beers.each do |beer|
+  beer.name
+end
+
+errors 400 or 500
+method missing
+redner html
+send back html status code
+set a cookie?
+broswer displays it
+/beer.jpg
+beer.css
+up to the user at that point
+what has been cached?
